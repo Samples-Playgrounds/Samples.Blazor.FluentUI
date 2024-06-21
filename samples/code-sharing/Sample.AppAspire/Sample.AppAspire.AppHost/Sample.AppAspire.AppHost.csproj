@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web.csproj" />
+    <ProjectReference Include="..\..\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
   </ItemGroup>
 
   <!--
