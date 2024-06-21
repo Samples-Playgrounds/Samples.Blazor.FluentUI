@@ -72,6 +72,81 @@ dotnet add \
   </ItemGroup>
     ```
 
+```bash
+dotnet new maui-blazor-web -o Sample02.Blazor.MAUI.Hybrid.Web.FluentUI
+```
+
+Aspire
+
+```
+dotnet sln \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.sln  \
+    add \
+        --solution-folder Sample.AppAspire \
+        Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj \
+        Sample.AppAspire/Sample.AppAspire.ServiceDefaults/Sample.AppAspire.ServiceDefaults.csproj \
+```
+
+```
+dotnet add \
+    Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj \
+        reference \
+            Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj
+```
+
+Adding MAUI project will not work
+
+```
+dotnet add \
+    Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj \
+        reference \
+            Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.csproj
+
+```
+
+FluentUI
+
+```
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components
+
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components
+
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components.Icons
+
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components.Icons
+
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components.Emoji
+
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components.Emoji
+```
+
+
+```
+dotnet add \
+    Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI/Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.csproj \
+        package \
+            Microsoft.FluentUI.AspNetCore.Components
+```
+
+
 ### Scripts
 
 These components are implemented in a script file which is included in the library itself and does 
