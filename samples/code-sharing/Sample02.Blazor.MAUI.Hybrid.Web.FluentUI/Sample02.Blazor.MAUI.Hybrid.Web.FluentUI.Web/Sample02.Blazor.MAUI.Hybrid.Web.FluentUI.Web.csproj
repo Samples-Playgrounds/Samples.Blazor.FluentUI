@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
