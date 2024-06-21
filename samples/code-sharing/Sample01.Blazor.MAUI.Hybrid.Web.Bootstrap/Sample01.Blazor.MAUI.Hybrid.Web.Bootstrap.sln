@@ -9,6 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample01.Blazor.MAUI.Hybrid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web", "Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web.csproj", "{C2800ABA-8C19-4553-A552-BFF679BEB039}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample.AppAspire", "Sample.AppAspire", "{71734B47-2737-4884-97B3-B92CDEFDA0BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.AppAspire.AppHost", "..\Sample.AppAspire\Sample.AppAspire.AppHost\Sample.AppAspire.AppHost.csproj", "{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.AppAspire.ServiceDefaults", "..\Sample.AppAspire\Sample.AppAspire.ServiceDefaults\Sample.AppAspire.ServiceDefaults.csproj", "{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,11 +115,47 @@ Global
 		{9E30318E-74DD-491B-9BAF-814DC9E892B8}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E30318E-74DD-491B-9BAF-814DC9E892B8}.Release|x86.Build.0 = Release|Any CPU
 		{9E30318E-74DD-491B-9BAF-814DC9E892B8}.Release|x86.Deploy.0 = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|x64.Build.0 = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Debug|x86.Build.0 = Debug|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|ARM64.Build.0 = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|x64.ActiveCfg = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|x64.Build.0 = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|x86.ActiveCfg = Release|Any CPU
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B}.Release|x86.Build.0 = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|ARM64.Build.0 = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|x64.Build.0 = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20E6FD03-9002-4EBA-ABF2-9DDE2C488842}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9DFAC86-FBC3-4FE6-B0F3-6125AEDDB67B} = {71734B47-2737-4884-97B3-B92CDEFDA0BF}
+		{F2BB45E5-BC28-48D5-AB89-B54DDB4DF465} = {71734B47-2737-4884-97B3-B92CDEFDA0BF}
 	EndGlobalSection
 EndGlobal
