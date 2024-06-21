@@ -20,17 +20,43 @@ dotnet new maui-blazor-web -o Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap
 
 dotnet watch \
     --project \
-        Sample.Blazor.MAUI.Hybrid.Web/Sample.Blazor.MAUI.Hybrid.Web.Web/Sample.Blazor.MAUI.Hybrid.Web.Web.csproj
+        Sample01.Blazor.MAUI.Hybrid.Web/Sample01.Blazor.MAUI.Hybrid.Web.Web/Sample01.Blazor.MAUI.Hybrid.Web.Web.csproj
 
 
 ```bash
 dotnet new maui-blazor-web -o Sample02.Blazor.MAUI.Hybrid.Web.FluentUI
 ```
 
-## 
+## Aspire for Testing/Debugging
 
 ```
 dotnet new aspire -o Sample.AppAspire
+```
+
+```
+dotnet sln \
+    Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.sln  \
+    add \
+        --solution-folder Sample.AppAspire \
+        Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj \
+        Sample.AppAspire/Sample.AppAspire.ServiceDefaults/Sample.AppAspire.ServiceDefaults.csproj \
+```
+
+```
+dotnet add \
+    Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj \
+        reference \
+            Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web.csproj
+```
+
+Adding MAUI project will not work
+
+```
+dotnet add \
+    Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj \
+        reference \
+            Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap/Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.csproj
+
 ```
 
 
