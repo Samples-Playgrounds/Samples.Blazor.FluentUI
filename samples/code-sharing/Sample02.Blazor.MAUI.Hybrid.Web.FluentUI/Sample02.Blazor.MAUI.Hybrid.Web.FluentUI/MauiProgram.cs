@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+
+using Microsoft.FluentUI.AspNetCore.Components;
+
 using Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.Services;
 using Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Services;
 
@@ -20,11 +23,13 @@ public static class MauiProgram
         builder.Services.AddSingleton<IFormFactor, FormFactor>();
 
         builder.Services.AddMauiBlazorWebView();
+        builder.Services.AddHttpClient();
+        builder.Services.AddFluentUIComponents();
 
-#if DEBUG
+        #if DEBUG
         builder.Services.AddBlazorWebViewDeveloperTools();
         builder.Logging.AddDebug();
-#endif
+        #endif
 
         return builder.Build();
     }

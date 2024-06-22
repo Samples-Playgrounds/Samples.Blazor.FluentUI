@@ -17,3 +17,8 @@
         padding-left: env(safe-area-inset-left);
     }
 }
+
+.footer
+{
+    background-color: var(--accent-fill-rest);
+}

@@ -1,3 +1,5 @@
+using Microsoft.FluentUI.AspNetCore.Components;
+
 using Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.Components;
 using Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.Services;
 using Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.Services;
@@ -5,8 +7,14 @@ using Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+builder.Services
+                .AddRazorComponents()
+                .AddInteractiveServerComponents()
+                ;
+
+builder.Services
+            .AddHttpClient()            // if SSR HttpClient must be registered before FLuentUI
+            .AddFluentUIComponents();
 
 // Add device-specific services used by the Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared project
 builder.Services.AddSingleton<IFormFactor, FormFactor>();
