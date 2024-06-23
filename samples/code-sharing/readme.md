@@ -76,7 +76,9 @@ dotnet add \
 dotnet new maui-blazor-web -o Sample02.Blazor.MAUI.Hybrid.Web.FluentUI
 ```
 
-Aspire
+*   https://medium.com/medialesson/building-a-data-driven-appwith-blazor-and-fluent-ui-85b6f1cfc818
+
+## Aspire
 
 ```
 dotnet sln \
