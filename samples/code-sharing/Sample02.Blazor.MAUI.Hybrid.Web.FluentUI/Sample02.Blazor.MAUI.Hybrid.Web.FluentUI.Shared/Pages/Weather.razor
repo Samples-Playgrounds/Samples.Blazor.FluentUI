@@ -1,5 +1,11 @@
 ﻿@page "/weather"
 
+@inject IDialogService dialogService
+@inject NavigationManager navigationManager
+@*
+@inject WeatherRepository repository
+*@
+
 <PageTitle>Weather</PageTitle>
 
 <h1>Weather</h1>
@@ -15,7 +21,14 @@ else
     <FluentDataGrid Items="@forecasts">
         <PropertyColumn Property="@(f => f.Date)" Sortable="true" Format="yyyy-MM-dd" />
         <PropertyColumn Property="@(f => f.TemperatureC)" Sortable="true" />
-        <PropertyColumn Property="@(f => f.TemperatureF)" Sortable="true" />
+        <PropertyColumn Property="@(f => f.Summary)" Sortable="true" />
+
+        <TemplateColumn Title="Actions">
+            <FluentButton IconStart="@(new Icons.Regular.Size16.Edit())" OnClick="@(() => EditInDialog(context))" />
+            <FluentButton IconStart="@(new Icons.Regular.Size16.DesktopEdit())" OnClick="@(() => EditInPanel(context))" />
+            <FluentButton IconStart="@(new Icons.Regular.Size16.Delete())" OnClick="@(() => DeleteItem(context))" />
+            <FluentButton IconStart="@(new Icons.Regular.Size16.Glasses())" OnClick="@(() => ShowItem(context))" />
+        </TemplateColumn>
     </FluentDataGrid>
     
     @*
@@ -43,7 +56,8 @@ else
     *@
 }
 
-@code {
+@code 
+{
     private IQueryable<WeatherForecast>? forecasts;
 
     protected override async Task OnInitializedAsync()
@@ -75,4 +89,120 @@ else
         public string? Summary { get; set; }
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
+    
+    // https://medium.com/medialesson/building-a-data-driven-appwith-blazor-and-fluent-ui-85b6f1cfc818
+    // Open the dialog for the item
+    private async Task EditInDialog(WeatherForecast originalItem)
+    {
+        var parameters = new DialogParameters
+        {
+            Title = "Edit Artist",
+            PreventDismissOnOverlayClick = true,
+            PreventScroll = true
+        };
+
+        /*
+        var dialog = await dialogService.ShowDialogAsync<EditArtistPanel>(originalItem.DeepCopy(), parameters);
+        var dialogResult = await dialog.Result;
+        await HandleEditConcertDialogResult(dialogResult, originalItem);
+        */
+    }    
+    
+    // Open the panel for the item
+    private async Task EditInPanel(WeatherForecast originalItem)
+    {
+        DialogParameters<WeatherForecast> parameters = new()
+        {
+            Title = $"Edit Artist",
+            Alignment = HorizontalAlignment.Right,
+            PrimaryAction = "Ok",
+            SecondaryAction = "Cancel"
+        };
+        /*
+        var dialog = await dialogService.ShowPanelAsync<EditArtistPanel>(originalItem.DeepCopy(), parameters);
+        var dialogResult = await dialog.Result;
+        await HandleEditConcertDialogResult(dialogResult, originalItem);
+        */
+    }
+    
+// Handle the result of the edit dialog/panel
+    private async Task HandleEditConcertDialogResult(DialogResult result, WeatherForecast originalItem)
+    {
+        // If cancelled, return
+        if (result.Cancelled)
+        {
+            return;
+        }
+
+        // If the data is not null, update the item
+        if (result.Data is not null)
+        {
+            var updatedItem = result.Data as WeatherForecast;
+            if (updatedItem is null)
+            {
+                return;
+            }
+
+            // Take the data from the "edited" item and put it into the original item
+            originalItem.Summary = updatedItem.Summary;
+            originalItem.Date = updatedItem.Date;
+            originalItem.TemperatureC = updatedItem.TemperatureC;
+
+            /*
+            repository.Update(originalItem);
+            await repository.SaveAsync();
+            LoadData();
+            */
+        }
+    }    
+    
+    private async Task DeleteItem(WeatherForecast item)
+    {
+        // Check if the item is null
+        if (item is null)
+        {
+            return;
+        }
+
+        // Create and show a dialog to confirm the delete
+        IDialogReference dialog = await dialogService.ShowConfirmationAsync(
+            $"Are you sure you want to delete the artist '{item.Date}'?",
+            "Yes", 
+            "No", 
+            "Delete Artist?");
+        DialogResult result = await dialog.Result;
+
+        // If cancelled, return
+        if (result.Cancelled)
+        {
+            return;
+        }
+
+        // Delete the item
+        try
+        {
+            /*
+            repository.Delete(item);
+            await repository.SaveAsync();
+            LoadData();
+            */
+        }
+        catch (Exception exc)
+        {
+            /*
+            string errorMessage = exc.InnerException?.Message ?? exc.Message;
+            await dialogService.ShowErrorAsync("Error", errorMessage);
+            */
+        }
+    }    
+    
+    private void ShowItem(WeatherForecast item)
+    {
+        /*
+        navigationManager.NavigateTo($"/Weather/{item.ID}");
+        */
+        
+        navigationManager.NavigateTo($"/Weather/");
+    }
+    
 }
