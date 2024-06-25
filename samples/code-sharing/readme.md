@@ -67,9 +67,9 @@ dotnet add \
 *   https://www.nuget.org/packages/Microsoft.FluentUI.AspNetCore.Components/
 
     ```xml
-  <ItemGroup>
-    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.8.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.8.0" />
+    </ItemGroup>
     ```
 
 ```bash
@@ -204,3 +204,25 @@ Reboot is a collection of element-specific CSS changes in a single file to help 
         for Blazor library. These templates can be used for web apps with rich dynamic user interfaces...
 
         dotnet new install Microsoft.Fast.Templates.FluentUI
+
+
+## WASM
+
+dotnet new \
+    blazorwasm \
+        -o AppBlazor.WASM
+dotnet new \
+    fluentblazorwasm \
+        -o AppBlazor.WASM.Fluent
+dotnet new \
+    fluentuiblazorwasm \
+        -o AppBlazor.WASM.FluentUI
+dotnet new \
+    wasmbrowser \
+        -o AppBlazor.WASM.Browser
+dotnet new \
+    wasmconsole \
+        -o AppBlazor.WASM.Console
+
+
+
