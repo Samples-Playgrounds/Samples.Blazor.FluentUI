@@ -1,5 +1,9 @@
 # Code Sharing
 
+# RCL Razor Class Library
+
+*   https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries
+
 # Sample01
 
 BlazorWeb + MAUI Hyhbrid
