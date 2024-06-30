@@ -19,7 +19,7 @@ builder.Services
 // Add device-specific services used by the Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared project
 builder.Services.AddSingleton<IFormFactor, FormFactor>();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

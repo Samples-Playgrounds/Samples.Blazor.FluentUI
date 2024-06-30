@@ -1,4 +1,9 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.Layout
+
+<Router 
+    AppAssembly="@typeof(App).Assembly"
+    AdditionalAssemblies="new []{typeof(MainLayout).Assembly}"
+    >
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
     </Found>

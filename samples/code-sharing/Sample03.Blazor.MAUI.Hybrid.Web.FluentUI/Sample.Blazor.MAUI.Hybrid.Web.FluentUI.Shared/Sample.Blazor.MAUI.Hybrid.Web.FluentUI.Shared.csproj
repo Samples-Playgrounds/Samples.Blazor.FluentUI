@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!--
+    https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries
+    https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries#client-side-browser-compatibility-analyzer
+    project types
+      Blazor Web Apps that enable Interactive WebAssembly components
+      Blazor WebAssembly (WASM) Apps
+      RCL     
+    -->
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
