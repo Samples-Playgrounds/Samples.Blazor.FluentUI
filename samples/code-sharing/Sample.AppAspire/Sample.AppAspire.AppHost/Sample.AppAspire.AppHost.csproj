@@ -10,16 +10,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.1" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <!--
     <ProjectReference Include="..\..\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web\Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap.Web.csproj" />
     <ProjectReference Include="..\..\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
-    -->
     <ProjectReference Include="..\..\Sample03.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
     <ProjectReference Include="..\..\Sample03.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.csproj" />
+    <ProjectReference Include="..\..\Sample03.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI.csproj">
+      <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    -->
+    <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
+    <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.csproj" />
+    <!--
+    <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI.csproj">
+      <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    -->
   </ItemGroup>
 
   <!--
@@ -27,4 +39,12 @@
     <ProjectReference Include="..\..\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
   </ItemGroup>
   -->
+
+  <ItemGroup>
+    <!--
+    -->
+    <PackageReference Include="HolisticWare.Tools.Aspire.Hosting.Clients.Maui" Version="0.0.1-alpha-20240202180633" />
+    <PackageReference Include="HolisticWare.Tools.Devices" Version="0.0.1-alpha-20240202130352" />
+  </ItemGroup>
+  
 </Project>
