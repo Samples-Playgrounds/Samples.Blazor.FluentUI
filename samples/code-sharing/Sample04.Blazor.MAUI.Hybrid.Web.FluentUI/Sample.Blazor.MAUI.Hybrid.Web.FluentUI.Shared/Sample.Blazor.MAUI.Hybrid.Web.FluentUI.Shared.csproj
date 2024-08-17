@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+    https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries
+    https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries#client-side-browser-compatibility-analyzer
+    project types
+      Blazor Web Apps that enable Interactive WebAssembly components
+      Blazor WebAssembly (WASM) Apps
+      RCL     
+    -->
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.8.0" />
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.6.0" />
+    <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.8.0" />
+    <PackageReference Include="ZString" Version="2.6.0" />
+
+    <!--
+    error NETSDK1082: There was no runtime pack for Microsoft.AspNetCore.App available for the specified 
+    RuntimeIdentifier 'browser-wasm'
+
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.4.0" />
+    -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\app.css" />
+  </ItemGroup>
+
+</Project>

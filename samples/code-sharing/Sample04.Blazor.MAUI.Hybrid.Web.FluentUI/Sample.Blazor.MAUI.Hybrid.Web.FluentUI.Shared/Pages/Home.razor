@@ -1,0 +1,16 @@
+﻿@page "/"
+@using Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.Services
+@inject ISystemInformation SystemInformation
+
+<PageTitle>@title</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app running on <em>@factor</em> using <em>@platform</em>.
+
+@code 
+{
+    string title = "Home";
+    private string factor => SystemInformation.FormFactor;
+    private string platform => SystemInformation.Platform;
+}

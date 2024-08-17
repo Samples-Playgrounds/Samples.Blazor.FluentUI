@@ -1,0 +1,45 @@
+﻿@page "/counter"
+@rendermode InteractiveAuto
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount  @state</p>
+
+<!--
+Bootstrap or HTML button
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+-->
+<FluentCounterBadge Count="@currentCount" Appearance="Appearance.Accent">
+    <FluentButton
+        id="button_calculate"
+        OnClick="@IncrementCount"
+        Loading="@calculating"
+        IconEnd="@(new Icons.Regular.Size16.Globe())"
+        Appearance="Appearance.Accent"
+        Autofocus="true"
+        >
+        Calculate
+    </FluentButton>
+</FluentCounterBadge>
+
+@code 
+{
+    private string state = "...";
+    private int currentCount = 0;
+
+    bool calculating = false;
+
+    private void IncrementCount()
+    {
+        state = "Calculating...";
+        calculating = true;
+
+        Thread.Sleep(2000);
+        currentCount += 10;
+
+        calculating = false;
+        state = "Done";
+    }
+}

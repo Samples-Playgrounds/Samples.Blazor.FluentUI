@@ -1,0 +1,63 @@
+@page "/system-information"
+@page "/sysinfo"
+@page "/info"
+
+@using Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.Services
+@inject ISystemInformation SystemInformationData
+@inject NavigationManager NavigationManager
+
+<PageTitle>@title</PageTitle>
+<h1>@title</h1>
+
+Welcome to your new app running on <em>@factor</em> using <em>@platform</em>.
+
+@code 
+{
+    private string title = "System Information";
+
+    private string factor =>  SystemInformationData.FormFactor;
+    private string platform => SystemInformationData.Platform;
+}
+
+<FluentDataGrid Items="@informations">
+    <PropertyColumn Property="@(i => i.Title)" Sortable="true" />
+    <PropertyColumn Property="@(i => i.Code)" Sortable="true" />
+    <PropertyColumn Property="@(i => i.Value)" Sortable="true" />
+</FluentDataGrid>
+
+@code
+{
+    private IQueryable<Information>? informations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        informations = new List<Information>
+        {
+            new Information 
+            { 
+                Title = "Form Factor", 
+                Code = "SystemInformation.FormFactor" ,
+                Value = SystemInformationData.FormFactor
+            },
+            new Information 
+            { 
+                Title = "Platform", 
+                Code = "SystemInformation.Platform" ,
+                Value = SystemInformationData.Platform
+            },
+            new Information 
+            { 
+                Title = "Uri", 
+                Code = "NavigationManager.Uri" ,
+                Value = NavigationManager.Uri
+            },
+        }.AsQueryable();
+    }
+    private class Information
+    {
+        public string Title { get; set; }
+        public string Code { get; set; }
+        public string Value { get; set; }
+    }
+
+}

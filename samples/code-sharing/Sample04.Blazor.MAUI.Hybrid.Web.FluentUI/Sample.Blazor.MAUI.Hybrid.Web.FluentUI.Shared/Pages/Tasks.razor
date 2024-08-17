@@ -1,0 +1,244 @@
+﻿@page "/tasks"
+
+@inject IDialogService dialogService
+@inject NavigationManager navigationManager
+
+<PageTitle>Tasks</PageTitle>
+<h1>Tasks</h1>
+
+@if (tasks == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <FluentStack VerticalAlignment="VerticalAlignment.Center">
+        <FluentSelect Items="@(Enum.GetValues<DataGridSelectMode>())"
+                    @bind-SelectedOption="@Mode" />
+        <FluentCheckbox @bind-Value="@UseSelectedItems"
+                        @bind-Value:after="@(() => ResetSelectItems())"
+                        Label="Use `SelectedItems` property" />
+        <FluentCheckbox @bind-Value="@SelectFromEntireRow"
+                        @bind-Value:after="@(() => ResetSelectItems())"
+                        Label="Use `SelectFromEntireRow` property" />
+    </FluentStack>
+
+    <FluentDataGrid Items="@tasks">
+                <SelectColumn 
+            TGridItem="TaskItemPresented"
+            SelectMode="@Mode"
+            @bind-SelectedItems="@SelectedItems" 
+            />
+
+        <PropertyColumn Property="@(f => f.Date)" Sortable="true" Format="yyyy-MM-dd" />
+        <PropertyColumn Property="@(f => f.Finished)" Sortable="true" />
+        <PropertyColumn Property="@(f => f.Title)" Sortable="true" />
+        <PropertyColumn Property="@(f => f.Descritpion)" Sortable="true" />
+
+        <TemplateColumn Title="Actions">
+            <FluentButton IconStart="@(new Icons.Regular.Size16.Edit())" OnClick="@(() => EditInDialog(context))" />
+            <FluentButton IconStart="@(new Icons.Regular.Size16.DesktopEdit())" OnClick="@(() => EditInPanel(context))" />
+            <FluentButton IconStart="@(new Icons.Regular.Size16.Delete())" OnClick="@(() => DeleteItem(context))" />
+            <FluentButton IconStart="@(new Icons.Regular.Size16.Glasses())" OnClick="@(() => ShowItem(context))" />
+        </TemplateColumn>
+    </FluentDataGrid>
+}
+
+@code 
+{
+    bool UseSelectedItems = true;
+    bool SelectFromEntireRow = true;
+    DataGridSelectMode Mode = DataGridSelectMode.Single;
+    static IQueryable<TaskItemPresented>? tasks = new List<TaskItemPresented>().AsQueryable();
+
+    IEnumerable<TaskItemPresented> SelectedItems = tasks.Where(p => p.Selected);
+
+    private void ResetSelectItems()
+    {
+        tasks.ToList().ForEach(i => i.Selected = false);
+        tasks.First().Selected = true;
+        SelectedItems = tasks.Where(p => p.Selected);
+    }
+}
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        // Simulate asynchronous loading to demonstrate a loading indicator
+        tasks = new List<TaskItemPresented>
+        {
+            new TaskItemPresented 
+            { 
+                Date = new DateOnly(2022, 1, 1), 
+                Finished = false, 
+                Title = "Task 1", 
+                Descritpion = "Description 1",
+                Selected = false
+            },
+            new TaskItemPresented 
+            { 
+                Date = new DateOnly(2022, 1, 2), 
+                Finished = false, 
+                Title = "Task 2", 
+                Descritpion = "Description 2",
+                Selected = false
+            },
+            new TaskItemPresented 
+            {
+                Date = new DateOnly(2022, 1, 3), 
+                Finished = false, 
+                Title = "Task 3", 
+                Descritpion = "Description 3",
+                Selected = false
+            },
+            new TaskItemPresented 
+            { 
+                Date = new DateOnly(2022, 1, 4), 
+                Finished = false, 
+                Title = "Task 4", 
+                Descritpion = "Description 4",
+                Selected = false
+            },
+            new TaskItemPresented 
+            { 
+                Date = new DateOnly(2022, 1, 5), 
+                Finished = false, 
+                Title = "Task 5", 
+                Descritpion = "Description 5",
+                Selected = false
+            },
+        }
+        .AsQueryable();
+
+        return;
+    }    
+
+    private class TaskItem
+    {
+        public DateOnly Date { get; set; }
+        public bool Finished { get; set; }
+        public string? Title { get; set; }
+        public string? Descritpion { get; set; }
+    }
+
+    private class TaskItemPresented : TaskItem
+    {
+        public bool Selected { get; set; }
+    }
+    // https://medium.com/medialesson/building-a-data-driven-appwith-blazor-and-fluent-ui-85b6f1cfc818
+    // Open the dialog for the item
+    private async Task EditInDialog(TaskItemPresented originalItem)
+    {
+        var parameters = new DialogParameters
+        {
+            Title = "Edit Artist",
+            PreventDismissOnOverlayClick = true,
+            PreventScroll = true
+        };
+
+        /*
+        var dialog = await dialogService.ShowDialogAsync<EditArtistPanel>(originalItem.DeepCopy(), parameters);
+        var dialogResult = await dialog.Result;
+        await HandleEditConcertDialogResult(dialogResult, originalItem);
+        */
+    }    
+    
+    // Open the panel for the item
+    private async Task EditInPanel(TaskItemPresented originalItem)
+    {
+        DialogParameters<TaskItem> parameters = new()
+        {
+            Title = $"Edit Artist",
+            Alignment = HorizontalAlignment.Right,
+            PrimaryAction = "Ok",
+            SecondaryAction = "Cancel"
+        };
+        /*
+        var dialog = await dialogService.ShowPanelAsync<EditArtistPanel>(originalItem.DeepCopy(), parameters);
+        var dialogResult = await dialog.Result;
+        await HandleEditConcertDialogResult(dialogResult, originalItem);
+        */
+    }
+    
+// Handle the result of the edit dialog/panel
+    private async Task HandleEditConcertDialogResult(DialogResult result, TaskItemPresented originalItem)
+    {
+        // If cancelled, return
+        if (result.Cancelled)
+        {
+            return;
+        }
+
+        // If the data is not null, update the item
+        if (result.Data is not null)
+        {
+            var updatedItem = result.Data as TaskItemPresented;
+            if (updatedItem is null)
+            {
+                return;
+            }
+
+            // Take the data from the "edited" item and put it into the original item
+            originalItem.Title = updatedItem.Title;
+            originalItem.Date = updatedItem.Date;
+            originalItem.Descritpion = updatedItem.Descritpion;
+            originalItem.Finished = updatedItem.Finished;
+
+            /*
+            repository.Update(originalItem);
+            await repository.SaveAsync();
+            LoadData();
+            */
+        }
+    }    
+    
+    private async Task DeleteItem(TaskItemPresented item)
+    {
+        // Check if the item is null
+        if (item is null)
+        {
+            return;
+        }
+
+        // Create and show a dialog to confirm the delete
+        IDialogReference dialog = await dialogService.ShowConfirmationAsync(
+            $"Are you sure you want to delete the artist '{item.Date}'?",
+            "Yes", 
+            "No", 
+            "Delete Artist?");
+        DialogResult result = await dialog.Result;
+
+        // If cancelled, return
+        if (result.Cancelled)
+        {
+            return;
+        }
+
+        // Delete the item
+        try
+        {
+            /*
+            repository.Delete(item);
+            await repository.SaveAsync();
+            LoadData();
+            */
+        }
+        catch (Exception exc)
+        {
+            /*
+            string errorMessage = exc.InnerException?.Message ?? exc.Message;
+            await dialogService.ShowErrorAsync("Error", errorMessage);
+            */
+        }
+    }    
+    
+    private void ShowItem(TaskItemPresented item)
+    {
+        /*
+        navigationManager.NavigateTo($"/Weather/{item.ID}");
+        */
+        
+        navigationManager.NavigateTo($"/tasks/");
+    }
+}
