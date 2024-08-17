@@ -8,13 +8,13 @@
 
 BlazorWeb + MAUI Hyhbrid
 
--   Beth Massi
+*   https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/tutorials/maui-blazor-web-app
 
-*   https://github.com/BethMassi/HybridSharedUI/tree/master
+*   Beth Massi
+
+    *   https://github.com/BethMassi/HybridSharedUI/tree/master
 
     *   https://github.com/BethMassi/BethTimeUntil
-
-*   https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid/tutorials/maui-blazor-web-app?view=aspnetcore-8.0
 
 *   https://github.com/iceHub82/IceNet.Shared
 
