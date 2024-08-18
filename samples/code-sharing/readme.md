@@ -18,6 +18,19 @@ BlazorWeb + MAUI Hyhbrid
 
 *   https://github.com/iceHub82/IceNet.Shared
 
+*   HybridWebView
+
+    *   https://github.com/Eilon/MauiHybridWebView
+
+    *   https://github.com/Eilon/SampleMauiHybridWebViewProject
+
+    *   https://github.com/mahop-net/Maui.HybridWebView
+
+    *   https://github.com/kurthildebrand/HybridWebView
+
+    
+
+
 ```bash
 dotnet new maui-blazor-web -o Sample01.Blazor.MAUI.Hybrid.Web.Bootstrap
 ```
