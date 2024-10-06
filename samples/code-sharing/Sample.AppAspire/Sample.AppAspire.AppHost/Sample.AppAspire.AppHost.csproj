@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.1.0" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,8 +24,9 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     -->
-    <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
-    <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.csproj" />
+    <ProjectReference Include="..\..\Sample05.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
+    <ProjectReference Include="..\..\Sample05.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.csproj" />
+    <ProjectReference Include="..\..\Sample05.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA.csproj" />
     <!--
     <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI.csproj">
       <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>

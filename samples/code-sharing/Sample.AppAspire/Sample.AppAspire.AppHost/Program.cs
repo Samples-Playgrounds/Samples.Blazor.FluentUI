@@ -10,6 +10,7 @@ IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(ar
 //builder.AddProject<Sample01_Blazor_MAUI_Hybrid_Web_Bootstrap_Web>("app-web-bootstrap");
 builder.AddProject<Sample_Blazor_MAUI_Hybrid_Web_FluentUI_Web>("app-web-fluentui");
 builder.AddProject<Sample_Blazor_MAUI_Hybrid_Web_FluentUI_Web_WASM>("app-web-fluentui-wasm");
+builder.AddProject<Sample_Blazor_MAUI_Hybrid_Web_FluentUI_Web_WASM_PWA>("app-web-fluentui-wasm-pwa");
 
 /*
     MAUI setup
