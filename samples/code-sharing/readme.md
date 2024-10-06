@@ -243,3 +243,7 @@ dotnet new \
 
 
 
+dotnet new \
+    blazorwasm \
+        --pwa \
+        -o Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA
