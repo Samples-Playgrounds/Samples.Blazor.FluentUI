@@ -1,3 +1,4 @@
+#!/bin/bash
 
 export OWNER=BethMassi
 export REPO=BethTimeUntil
