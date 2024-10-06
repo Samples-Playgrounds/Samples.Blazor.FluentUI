@@ -1,0 +1,27 @@
+@implements IDialogContentComponent
+
+<FluentDesignTheme
+    bind-Mode="@Mode"
+    bind-Color="@Color"
+    >
+</FluentDesignTheme>
+
+<FluentSelect
+    Title="Theme"
+    Items="@(Enum.GetValues<DesignThemeModes>())"
+    @bind-SelectedOption="@Mode"
+    >
+</FluentSelect>
+
+<FluentSelect
+    Title="Color"
+    Items="@( new OfficeColor?[] { OfficeColor.OneNote, OfficeColor.Outlook })"
+    @bind-SelectedOption="@Color"
+    >
+</FluentSelect>
+
+@code
+{
+    private DesignThemeModes Mode = DesignThemeModes.System;
+    private OfficeColor? Color = OfficeColor.OneNote;
+}

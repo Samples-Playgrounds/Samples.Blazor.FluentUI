@@ -1,0 +1,20 @@
+﻿@using Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.Layout
+
+<FluentThemeProvider Theme="@coloured">    
+    <Router 
+        AppAssembly="typeof(Layout.MainLayout).Assembly"
+        >
+        <Found Context="routeData">
+            <RouteView 
+                RouteData="routeData" 
+                DefaultLayout="@typeof(MainLayout)" 
+                />
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        </Found>
+    </Router>
+</FluentThemeProvider>
+
+@code
+{
+    private DesignThemeModes coloured = DesignThemeModes.System;
+}

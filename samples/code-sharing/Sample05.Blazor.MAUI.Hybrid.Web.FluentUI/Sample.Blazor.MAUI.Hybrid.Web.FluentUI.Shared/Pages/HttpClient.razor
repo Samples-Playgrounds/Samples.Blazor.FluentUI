@@ -1,0 +1,65 @@
+﻿@page "/http-client"
+
+<PageTitle>HTTP Client</PageTitle>
+
+<h1>HTTP Client</h1>
+
+<p role="status">Status: @status</p>
+
+<!--
+Bootstrap or HTML button
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+-->
+    <FluentButton
+        id="button_download"
+        OnClick="@HttpRequest"
+        Loading="@downloading"
+        IconEnd="@(new Icons.Regular.Size16.Globe())"
+        Appearance="Appearance.Accent"
+        Autofocus="true"
+        >
+        Calculate
+    </FluentButton>
+
+<p role="status">Response: @response</p>
+
+@code 
+{
+    string status = "";
+    string response = "";
+    bool downloading = false;
+
+    private async Task HttpRequest()
+    {
+        status = "Request started...";
+        downloading = true;
+        string url =
+                    "http://universities.hipolabs.com/search?country=Croatia" 
+                    //"https://universities.hipolabs.com/search?country=Croatia" 
+                    // "https://api.example.com/data"
+                    ;
+        try
+        {
+            /*
+            was loaded over HTTPS, but requested an insecure resource 
+            This request has been blocked; the content must be served over HTTPS.
+            */
+            using (System.Net.Http.HttpClient client = new())
+            {
+                HttpResponseMessage httpResponse = await client.GetAsync(url);
+                httpResponse.EnsureSuccessStatusCode();
+                response = await httpResponse.Content.ReadAsStringAsync();
+                status = "Request finished successfully.";
+                // code inside the using block
+            }
+        }
+        catch (Exception ex)
+        {
+            status = $"Request failed: {ex.Message}";
+        }
+        finally
+        {
+            downloading = false;
+        }
+    }
+}
