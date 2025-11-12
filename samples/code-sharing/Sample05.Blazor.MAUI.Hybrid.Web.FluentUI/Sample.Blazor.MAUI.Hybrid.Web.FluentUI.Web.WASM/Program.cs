@@ -24,27 +24,39 @@ WebAssemblyHostBuilder builder = WebAssemblyHostBuilder
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
+builder.Services.AddHttpClient();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddFluentUIComponents();
 
 // Add device-specific services used by the Sample02.Blazor.MAUI.Hybrid.Web.FluentUI.Shared project
 builder.Services.AddSingleton<ISystemInformation, SystemInformation>();
 
-// builder.Services.AddCors();
+/*
+CORS - Server side concept (makes no sense on client side)
 
-// app.Services
-//     .AddCors(options =>
-//     {
-//         options.AddDefaultPolicy(builder =>
-//         {
-//             builder.AllowAnyMethod()
-//                 .AllowAnyHeader()
-//                 .SetIsOriginAllowed(origin => true) // allow any origin  
-//                 .AllowCredentials();               // allow credentials 
-//         });
-//     });
+builder.Services.AddCors
+					(
+						options =>
+						{
+							options.AddPolicy
+							(
+								"cors-wasm",
+								builder =>
+								{
+									builder
+										.AllowAnyOrigin()
+										.AllowAnyHeader()
+										.AllowAnyMethod()
+										.SetIsOriginAllowedToAllowWildcardSubdomains();
+								}
+							);
+						}
+					);
+*/
 
 WebAssemblyHost? app = builder.Build();
+
+//app.UseCors("cors-wasm");
 
 // app
     //.MapRazorComponents<App>()
