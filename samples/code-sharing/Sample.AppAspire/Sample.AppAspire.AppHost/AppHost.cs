@@ -26,7 +26,7 @@ builder
 		project_maui,
 		// overload added just to avoid ambigious call and leave the method name as is
 		// without this parameter - ambigious call
-		new[] 
+		new[]
 		{
 			"net8.0-android",
 			"net8.0-ios",
@@ -41,7 +41,7 @@ builder
 	(
 		"net8.0-android",
 		"emulator-android-34-google-apis-arm-v8a-pixel"
-	)         
+	)
 	// Launching 2 emulators does not work yet
 	.BuildClient
 	      (
@@ -69,4 +69,3 @@ builder
 	.Build()
 	// .BuildDistributedAppWithClientsMAUI()
 	.Run();
-	
