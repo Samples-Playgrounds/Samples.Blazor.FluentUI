@@ -1,0 +1,17 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Sample.AppAspire/">
+    <Project Path="../Sample.AppAspire/Sample.AppAspire.AppHost/Sample.AppAspire.AppHost.csproj" />
+    <Project Path="../Sample.AppAspire/Sample.AppAspire.ServiceDefaults/Sample.AppAspire.ServiceDefaults.csproj" />
+  </Folder>
+  <Project Path="Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI/Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI.csproj" />
+  <Project Path="Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Shared/Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Shared.csproj" />
+  <Project Path="Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA/Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA.csproj" />
+  <Project Path="Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM/Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.csproj" />
+  <Project Path="Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web/Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.csproj" />
+</Solution>
