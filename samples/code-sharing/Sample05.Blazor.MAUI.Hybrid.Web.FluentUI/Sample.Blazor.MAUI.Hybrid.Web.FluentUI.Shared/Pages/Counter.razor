@@ -1,4 +1,5 @@
 ﻿@page "/counter"
+@using Microsoft.FluentUI.AspNetCore.Components.Icons.Regular
 @rendermode InteractiveAuto
 
 <PageTitle>Counter</PageTitle>
@@ -16,7 +17,7 @@ Bootstrap or HTML button
         id="button_calculate"
         OnClick="@IncrementCount"
         Loading="@calculating"
-        IconEnd="@(new Icons.Regular.Size16.Globe())"
+        IconEnd="@(new Size20.Globe())"
         Appearance="Appearance.Accent"
         Autofocus="true"
         >

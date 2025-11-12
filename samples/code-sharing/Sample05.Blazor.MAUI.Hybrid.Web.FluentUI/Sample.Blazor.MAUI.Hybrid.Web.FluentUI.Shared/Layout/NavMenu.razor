@@ -1,49 +1,51 @@
-﻿<div class="navmenu">
+﻿@using Microsoft.FluentUI.AspNetCore.Components.Icons.Regular
+
+<div class="navmenu">
     <input type="checkbox" title="Menu expand/collapse toggle" id="navmenu-toggle" class="navmenu-icon" />
     <label for="navmenu-toggle" class="navmenu-icon">
-        <FluentIcon Value="@(new Icons.Regular.Size20.Navigation())" Color="Color.Fill"/>
+        <FluentIcon Value="@(new Size20.Navigation())" Color="Color.Fill"/>
     </label>
     <nav class="sitenav" aria-labelledby="main-menu" onclick="document.getElementById('navmenu-toggle').click();">
         <FluentNavMenu Id="main-menu" Width="250" Collapsible="true" Title="Navigation menu" @bind-Expanded="expanded">
             <FluentNavLink 
                 Href="/" 
                 Match="NavLinkMatch.All" 
-                Icon="@(new Icons.Regular.Size20.Home())" 
+                Icon="@(new Size20.Home())" 
                 IconColor="Color.Accent"
                 >
                 Home
             </FluentNavLink>
             <FluentNavLink 
                 Href="counter" 
-                Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())" 
+                Icon="@(new Size20.NumberSymbolSquare())" 
                 IconColor="Color.Accent"
                 >
                 Counter
             </FluentNavLink>
             <FluentNavLink 
                 Href="weather" 
-                Icon="@(new Icons.Regular.Size20.WeatherPartlyCloudyDay())" 
+                Icon="@(new Size20.WeatherPartlyCloudyDay())" 
                 IconColor="Color.Accent"
                 >
                 Weather
             </FluentNavLink>
             <FluentNavLink 
                 Href="http-client" 
-                Icon="@(new Icons.Regular.Size20.Globe())" 
+                Icon="@(new Size20.Globe())" 
                 IconColor="Color.Accent"
                 >
                 HTTP Client
             </FluentNavLink>
             <FluentNavLink 
                 Href="tasks" 
-                Icon="@(new Icons.Regular.Size20.TasksApp())" 
+                Icon="@(new Size20.TasksApp())" 
                 IconColor="Color.Accent"
                 >
                 TODOs / Tasks
             </FluentNavLink>
             <FluentNavLink 
                 Href="system-information" 
-                Icon="@(new Icons.Regular.Size20.Settings())" 
+                Icon="@(new Size20.Settings())" 
                 IconColor="Color.Accent"
                 >
                 System Information

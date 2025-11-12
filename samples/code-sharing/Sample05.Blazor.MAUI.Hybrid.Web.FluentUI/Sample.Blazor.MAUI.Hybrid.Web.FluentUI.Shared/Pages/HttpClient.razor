@@ -1,4 +1,8 @@
 ﻿@page "/http-client"
+@using System.Net
+@inject IHttpClientFactory ClientFactory
+
+@using Microsoft.FluentUI.AspNetCore.Components.Icons.Regular
 
 <PageTitle>HTTP Client</PageTitle>
 
@@ -14,7 +18,7 @@ Bootstrap or HTML button
         id="button_download"
         OnClick="@HttpRequest"
         Loading="@downloading"
-        IconEnd="@(new Icons.Regular.Size16.Globe())"
+        IconEnd="@(new Size20.Globe())"
         Appearance="Appearance.Accent"
         Autofocus="true"
         >
@@ -34,16 +38,18 @@ Bootstrap or HTML button
         status = "Request started...";
         downloading = true;
         string url =
+
+                    //"https://universities.hipolabs.com/search?country=Croatia" 
                     "http://universities.hipolabs.com/search?country=Croatia" 
                     //"https://universities.hipolabs.com/search?country=Croatia" 
-                    // "https://api.example.com/data"
+                    //"https://api.example.com/data"
                     ;
         try
         {
             /*
             was loaded over HTTPS, but requested an insecure resource 
             This request has been blocked; the content must be served over HTTPS.
-            */
+
             using (System.Net.Http.HttpClient client = new())
             {
                 HttpResponseMessage httpResponse = await client.GetAsync(url);
@@ -52,6 +58,21 @@ Bootstrap or HTML button
                 status = "Request finished successfully.";
                 // code inside the using block
             }
+            */
+
+            var client = ClientFactory.CreateClient();
+
+            var url_encoded = WebUtility.UrlEncode(url);
+
+            using var request = new HttpRequestMessage
+                                        (
+                                            HttpMethod.Get,
+                                            // $"https://api.cors.lol/?url={url_encoded}"
+                                            $"https://corsproxy.io/?{url_encoded}"
+                                        );
+
+            HttpResponseMessage http_response = await client.SendAsync(request);
+            response = await http_response.Content.ReadAsStringAsync();
         }
         catch (Exception ex)
         {

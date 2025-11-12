@@ -1,4 +1,4 @@
-﻿@using Microsoft.FluentUI.AspNetCore.Components
+﻿@using Microsoft.FluentUI.AspNetCore.Components.Icons.Regular
 @inject IDialogService DialogService
 @inherits LayoutComponentBase
 
@@ -7,7 +7,7 @@
         AppBlazor.SharedCode.FluentUI
         <FluentSpacer />
         <FluentIcon
-            Value="@(new Icons.Regular.Size20.DarkTheme())"
+            Value="@(new Size20.DarkTheme())"
             Color="Color.FillInverse"
             OnClick="@ShowSettingsAsync"
             >

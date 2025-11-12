@@ -1,4 +1,5 @@
 ﻿@page "/tasks"
+@using Microsoft.FluentUI.AspNetCore.Components.Icons.Regular
 
 @inject IDialogService dialogService
 @inject NavigationManager navigationManager
@@ -36,10 +37,10 @@ else
         <PropertyColumn Property="@(f => f.Descritpion)" Sortable="true" />
 
         <TemplateColumn Title="Actions">
-            <FluentButton IconStart="@(new Icons.Regular.Size16.Edit())" OnClick="@(() => EditInDialog(context))" />
-            <FluentButton IconStart="@(new Icons.Regular.Size16.DesktopEdit())" OnClick="@(() => EditInPanel(context))" />
-            <FluentButton IconStart="@(new Icons.Regular.Size16.Delete())" OnClick="@(() => DeleteItem(context))" />
-            <FluentButton IconStart="@(new Icons.Regular.Size16.Glasses())" OnClick="@(() => ShowItem(context))" />
+            <FluentButton IconStart="@(new Size20.Edit())" OnClick="@(() => EditInDialog(context))" />
+            <FluentButton IconStart="@(new Size20.DesktopEdit())" OnClick="@(() => EditInPanel(context))" />
+            <FluentButton IconStart="@(new Size20.Delete())" OnClick="@(() => DeleteItem(context))" />
+            <FluentButton IconStart="@(new Size20.Glasses())" OnClick="@(() => ShowItem(context))" />
         </TemplateColumn>
     </FluentDataGrid>
 }
