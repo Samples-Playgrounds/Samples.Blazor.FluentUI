@@ -21,6 +21,10 @@ WebAssemblyHostBuilder builder = WebAssemblyHostBuilder
 						#endif
 						;
 
+/*
+builder.AddServiceDefaults();
+*/
+
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
