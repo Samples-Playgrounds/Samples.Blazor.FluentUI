@@ -12,6 +12,8 @@ var builder = WebApplication
                     #endif
                     ;
 
+builder.AddServiceDefaults();
+
 // Add services to the container.
 builder.Services
                 .AddRazorComponents()
