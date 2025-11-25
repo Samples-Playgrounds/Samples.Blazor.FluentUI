@@ -1,5 +1,5 @@
 using Projects;
-using HolisticWare.Aspire.Hosting.Maui;
+// using HolisticWare.Aspire.Hosting.Maui;
 
 // HolisticWare.Tools.Devices.Android.Emulator.Launch("nexus_9_api_33");
 // HolisticWare.Tools.Devices.Android.Emulator.Launch("emulator-android-34-google-apis-arm-v8a-pixel");

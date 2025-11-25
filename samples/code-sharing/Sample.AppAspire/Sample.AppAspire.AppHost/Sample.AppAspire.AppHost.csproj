@@ -10,9 +10,9 @@
 
     <ItemGroup>
         <!--
-        -->
         <PackageReference Include="HolisticWare.Tools.Aspire.Hosting.Clients.Maui" Version="0.0.1-alpha-20240202180633" />
         <PackageReference Include="HolisticWare.Tools.Devices" Version="0.0.1-alpha-20240202130352" />
+        -->
     </ItemGroup>
 
   <ItemGroup>
@@ -30,11 +30,11 @@
     <ProjectReference Include="..\..\Sample05.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.csproj" />
     <ProjectReference Include="..\..\Sample05.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.Web.WASM.PWA.csproj" />
     <!--
-    <ProjectReference Include="..\..\Sample04.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI.csproj">
+    -->
+    <ProjectReference Include="..\..\Sample05.Blazor.MAUI.Hybrid.Web.FluentUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI\Sample.Blazor.MAUI.Hybrid.Web.FluentUI.MAUI.csproj">
       <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    -->
   </ItemGroup>
 
 </Project>
