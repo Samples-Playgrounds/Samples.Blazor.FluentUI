@@ -72,7 +72,7 @@ string[] project_folders =
                                 "App_Web_ASP_net__BlazorWASM_FluentUI",
                                 "App_Web_ASP_net__BlazorWASM_PWA_FluentUI",
                                 "AppAspire_Web_ASP_net__Blazor_FluentUI",
-                                "AppAspire_Web_ASP_net__MAUI_Blazor_FluentUI",
+                                "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI",
                                 "AppAspire.AppHost",
                                 "AppAspire.AppHost.SingleFile",
                                 "AppSuite__MAUI_Blazor_Web",
@@ -203,7 +203,7 @@ string[] project_args_list =
                                 new \
                                     fluentmaui-blazor-web \
                                         --output \
-                                            ./samples/apps/AppAspire_Web_ASP_net__MAUI_Blazor_FluentUI
+                                            ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI
                                 """,
                                 """
                                 new \
@@ -288,31 +288,35 @@ project_args_list =
                     """
                     reference \
                         remove \
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/AppSuite__MAUI_Blazor_Web.Shared.csproj \
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/ \
                             --project
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.csproj \
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web/ \
                     """,
                     """
                     reference \
                         remove \
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/AppSuite__MAUI_Blazor_Web.Shared.csproj \
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/ \
                             --project
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/AppSuite__MAUI_Blazor_Web.Web.csproj \
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/ \
                     """,
                     """
                     reference \
                         remove \
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/AppSuite__MAUI_Blazor_Web.Shared.csproj \
-                            --project
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client/AppSuite__MAUI_Blazor_Web.Web.Client.csproj \
-                    """,
-                    """
-                    reference \
-                        remove \
-                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/AppSuite__MAUI_Blazor_Web.Shared.csproj \
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/ \
                             --project
                                 ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client/ \
                     """,
+                    """
+                    reference \
+                        remove \
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Shared/ \
+                            --project
+                                ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client/ \
+                    """,
+
+
+
+
                     /*
                     */
                 ];
@@ -347,6 +351,23 @@ Information("References     removed");
                                         "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/AppSuite__MAUI_Blazor_Web.csproj",
                                         "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/AppSuite__MAUI_Blazor_Web.MAUI.csproj"
                                     ),
+                                    (
+                                        // folder old
+                                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared/",
+                                        // folder new
+                                        "source-libraries/ui-user-interface/Library.RazorComponents.Shared/",
+                                        // file old
+                                        "source-libraries/ui-user-interface/Library.RazorComponents.Shared/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared.csproj",
+                                        // file new
+                                        "source-libraries/ui-user-interface/Library.RazorComponents.Shared/Library.RazorComponents.FluentUI.Shared.csproj"
+                                    ),
+                                    (
+                                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/",
+                                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/",
+                                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.csproj",
+                                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI.csproj"
+                                    ),
+                                    
                                     // (
                                     //     "./Library.AspireServiceDefaults/",
                                     //     "source-libraries/utilities/Library.AspireServiceDefaults/",
@@ -415,8 +436,8 @@ Information("References     removed");
                                         ""
                                     ),
                                     (
-                                        "./AppAspire_Web_ASP_net__MAUI_Blazor_FluentUI/",
-                                        "samples/apps/AppAspire_Web_ASP_net__MAUI_Blazor_FluentUI/",
+                                        "./AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/",
+                                        "samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/",
                                         "",
                                         ""
                                     ),
@@ -487,6 +508,18 @@ https://raw.githubusercontent.com/github/gitignore/refs/heads/main/VisualStudio.
                     (
                         "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/",
                         "AppSuite__MAUI_Blazor_Web.MAUI.csproj",
+                        """<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>""",
+                        """<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>"""
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI.MAUI/",
+                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI.MAUI.csproj",
+                        """<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>""",
+                        """<TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>"""
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI.MAUI/",
+                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI.MAUI.csproj",
                         """<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>""",
                         """<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>"""
                     ),
@@ -806,11 +839,29 @@ project_args_list =
                                     ./samples/apps/App_Web_ASP_net__BlazorWASM_FluentUI \
                                     ./samples/apps/App_Web_ASP_net__BlazorWASM_PWA_FluentUI \
                                     ./samples/apps/App_Web_ASP_net__Blazor_FluentUI \
+                                    ./samples/apps/AppAspire.AppHost \
+                    """,
+                    """
+                    sln \
+                        AppSuite.slnx \
+                        add \
+                            --solution-folder \
+                                samples/apps/AppSuite__MAUI_Blazor_Web \
                                     ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI \
                                     ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web \
                                     ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client \
                                     ./samples/apps/AppAspire.AppHost \
                     """,
+                    """
+                    sln \
+                        AppSuite.slnx \
+                        add \
+                            --solution-folder \
+                                samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/ \
+                                    ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI \
+                                    ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web \
+                    """,
+                    
                     """
                     package \
                         add \
@@ -909,7 +960,16 @@ System.IO.File.WriteAllText
                     );
 
 
-
+foreach(string p in System.IO.Directory.GetFiles("./", "*.csproj", SearchOption.AllDirectories))
+{
+    StartProcessDotnet
+        (
+            $"""
+            outdated \
+                --upgrade
+            """
+        );
+}
 
 
 StartProcess("open", "AppSuite.slnx");
