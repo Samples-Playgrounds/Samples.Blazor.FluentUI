@@ -534,27 +534,28 @@ https://raw.githubusercontent.com/github/gitignore/refs/heads/main/VisualStudio.
                     (
                         "./source-libraries/ui-user-interface/Library.RazorComponents.Shared/",
                         "*.cs",
-                        "AppSuite__MAUI_Blazor_Web",
+                        "AppSuite__MAUI_Blazor_Web.Shared",
                         "Library.RazorComponents.Shared"
                     ),
                     (
                         "./source-libraries/ui-user-interface/Library.RazorComponents.Shared/",
                         "*.razor",
-                        "AppSuite__MAUI_Blazor_Web",
+                        "AppSuite__MAUI_Blazor_Web.Shared",
                         "Library.RazorComponents.Shared"
                     ),
                     (
                         "./source-libraries/ui-user-interface/Library.RazorComponents.FluentUI.Shared/",
                         "*.cs",
-                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI",
+                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
                         "Library.RazorComponents.FluentUI.Shared"
-                    ),
+                    ),                    
                     (
                         "./source-libraries/ui-user-interface/Library.RazorComponents.FluentUI.Shared/",
                         "*.razor",
-                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI",
+                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
                         "Library.RazorComponents.FluentUI.Shared"
                     ),
+                    //
                     (
                         "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/",
                         "*.cs",
@@ -573,6 +574,26 @@ https://raw.githubusercontent.com/github/gitignore/refs/heads/main/VisualStudio.
                         "using AppSuite__MAUI_Blazor_Web.Shared",
                         "using Library.RazorComponents.Shared"
                     ),
+                    //
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/",
+                        "*.cs",
+                        "using AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
+                        "using Library.RazorComponents.FluentUI.Shared"
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/",
+                        "*.xaml",
+                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
+                        "Library.RazorComponents.FluentUI.Shared"
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/",
+                        "*.razor",
+                        "using AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
+                        "using Library.RazorComponents.FluentUI.Shared"
+                    ),
+                    //
                     (
                         "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/",
                         "*.razor",
@@ -597,6 +618,46 @@ https://raw.githubusercontent.com/github/gitignore/refs/heads/main/VisualStudio.
                         "_content/AppSuite__MAUI_Blazor_Web.Shared",
                         "_content/Library.RazorComponents.Shared"
                     ),
+                    //
+                    (
+                        "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/",
+                        "App.razor",
+                        "_content/AppSuite__MAUI_Blazor_Web.Shared",
+                        "_content/Library.RazorComponents.Shared"
+                    ),
+                    //
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web/",
+                        "*.razor",
+                        "using AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
+                        "using Library.RazorComponents.FluentUI.Shared"
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web/",
+                        "*.cs",
+                        "using AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
+                        "using Library.RazorComponents.FluentUI.Shared"
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web/",
+                        "Program.cs",
+                        "AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared._Imports",
+                        "Library.RazorComponents.FluentUI.Shared._Imports"
+                    ),
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web/",
+                        "index.html",
+                        "_content/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Shared",
+                        "_content/Library.RazorComponents.FluentUI.Shared"
+                    ),
+                    //
+                    (
+                        "./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/",
+                        "index.html",
+                        "_content/AppSuite__MAUI_Blazor_Web.Shared",
+                        "_content/Library.RazorComponents.Shared"
+                    ),
+                    //
                     (
                         "./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client/",
                         "*.razor",
@@ -999,6 +1060,14 @@ project_args_list =
                     --project 
                         ./source-libraries/ui-user-interface/Library.RazorComponents.FluentUI.Shared/ \
                     """,
+                    """
+                    package \
+                        update \
+                            Microsoft.AspNetCore.Components.WebAssembly.Server \
+                    --project 
+                        ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/ \
+                    """,
+
                 ];
 
 
