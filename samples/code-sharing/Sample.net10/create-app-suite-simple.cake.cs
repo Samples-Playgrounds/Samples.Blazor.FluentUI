@@ -65,7 +65,7 @@ string[] architecture_folders =
 string[] project_folders =
                             [
                                 "App__MAUI",
-                                "App__MAUI_Blazor",
+                                "App__MAUI_BlazorHybrid",
                                 "App_Web_ASP_net__Blazor",
                                 "App_Web_ASP_net__Blazor_FluentUI",
                                 "App_Web_ASP_net__BlazorWASM",
@@ -159,7 +159,13 @@ string[] project_args_list =
                                 new \
                                     maui-blazor \
                                         --output \
-                                            ./samples/apps/App__MAUI_Blazor
+                                            ./samples/apps/App__MAUI_BlazorHybrid
+                                """,
+                                """
+                                new \
+                                    maui-blazor \
+                                        --output \
+                                            ./samples/apps/App__MAUI_BlazorHybrid_LibraryReference
                                 """,
                                 """
                                 new \
@@ -185,6 +191,12 @@ string[] project_args_list =
                                     fluentblazor \
                                         --output \
                                             ./samples/apps/App_Web_ASP_net__Blazor_FluentUI \
+                                """,
+                                """
+                                new \
+                                    fluentblazor \
+                                        --output \
+                                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI_Theme \
                                 """,
                                 """
                                 new \
@@ -396,8 +408,8 @@ Information("References     removed");
                                         ""
                                     ),
                                     (
-                                        "./App__MAUI_Blazor/",
-                                        "samples/apps/App__MAUI_Blazor/",
+                                        "./App__MAUI_BlazorHybrid/",
+                                        "samples/apps/App__MAUI_BlazorHybrid/",
                                         "",
                                         ""
                                     ),
@@ -816,6 +828,143 @@ project_args_list =
                             ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client/ \
                     """,
 
+                    /*
+                        MAUI projects
+                    */
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/App_Web_ASP_net__Blazor/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI_Theme/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM_FluentUI/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/ \
+                            --project \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM_PWA_FluentUI/ \
+                    """,
+
+                    /*
+                    MAUI projects are added to Aspire AppHost programatically!!
+
+                            ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/ \
+                            ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.MAUI/ \
+                    */
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI/AppSuite__Aspire_Web_ASP_net__MAUI_Blazor_FluentUI.Web/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/App_Web_ASP_net__Blazor/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI_Theme/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM_FluentUI/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    """
+                    reference \
+                        add \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM_PWA_FluentUI/ \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+
 
 
                     """
@@ -902,20 +1051,20 @@ project_args_list =
                     sln \
                         AppSuite.slnx \
                         add \
+                            --solution-folder \
+                                source-libraries/business-domain-logic-models/ \
                             ./source-libraries/business-domain-logic-models/HolisticWare.BusinessDomainLogicModels/
-                        --solution-folder \
-                            source-libraries/business-domain-logic-models/ \
                     """,
                     """
                     sln \
                         AppSuite.slnx \
                         add \
+                            --solution-folder \
+                                source-libraries/ui-user-interface/ \
                             ./source-libraries/ui-user-interface/Library.RazorComponents.Shared/ \
                             ./source-libraries/ui-user-interface/Library.RazorComponents.FluentUI.Shared/ \
                             ./source-libraries/ui-user-interface/HolisticWare.BusinessDomainLogicModels.UserInterface.Blazor.Razor/ \
                             ./source-libraries/ui-user-interface/HolisticWare.BusinessDomainLogicModels.UserInterface.MAUI/ \
-                        --solution-folder \
-                            source-libraries/ui-user-interface/ \
                     """,
                     """
                     sln \
@@ -923,7 +1072,7 @@ project_args_list =
                         add \
                             --solution-folder \
                                 source-libraries/utilities/ \
-                                ./source-libraries/utilities/Library.AspireServiceDefaults/Library.AspireServiceDefaults.csproj
+                                ./source-libraries/utilities/Library.AspireServiceDefaults/
                     """,
                     """
                     sln \
@@ -931,14 +1080,16 @@ project_args_list =
                         add \
                             --solution-folder \
                                 samples/apps \
-                                    ./samples/apps/App__MAUI/ \
-                                    ./samples/apps/App__MAUI_Blazor \
-                                    ./samples/apps/App_Web_ASP_net__Blazor \
-                                    ./samples/apps/App_Web_ASP_net__BlazorWASM \
-                                    ./samples/apps/App_Web_ASP_net__BlazorWASM_FluentUI \
-                                    ./samples/apps/App_Web_ASP_net__BlazorWASM_PWA_FluentUI \
-                                    ./samples/apps/App_Web_ASP_net__Blazor_FluentUI \
-                                    ./samples/apps/AppAspire.AppHost \
+                            ./samples/apps/App__MAUI/ \
+                            ./samples/apps/App__MAUI_BlazorHybrid \
+                            ./samples/apps/App_Web_ASP_net__Blazor \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM_FluentUI \
+                            ./samples/apps/App_Web_ASP_net__BlazorWASM_PWA_FluentUI \
+                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI \
+                            ./samples/apps/App__MAUI_BlazorHybrid_LibraryReference \
+                            ./samples/apps/App_Web_ASP_net__Blazor_FluentUI_Theme \
+                            ./samples/apps/AppAspire.AppHost \
                     """,
                     """
                     sln \
@@ -958,28 +1109,6 @@ project_args_list =
                             ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web/ \
                             ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.Web.Client/ \
                             ./samples/apps/AppSuite__MAUI_Blazor_Web/AppSuite__MAUI_Blazor_Web.MAUI/ \
-                    """,
-                    """
-                    package \
-                        add \
-                            BenchmarkDotNet \
-                        --project \
-                            tests/benchmark-tests/business-domain-logic-models/RunnerTests.BenchmarkDotNet/ \
-                    """,
-                    """
-                    package \
-                        add \
-                            BenchmarkDotNet \
-                        --project \
-                            tests/benchmark-tests/ui-user-interface/RunnerTests.BenchmarkDotNet/ \
-                    """,
-                    """
-                    package \
-                        add \
-                            TUnit \
-                            --prerelease \
-                        --project \
-                            tests/unit-tests/business-domain-logic-models/RunnerTests.TUnit/ \
                     """,
                     """
                     sln \
@@ -1048,6 +1177,57 @@ project_args_list =
                 [
                     """
                     package \
+                        add \
+                            Microsoft.Maui.Core
+                        --project \
+                            ./source-libraries/utilities/Library.AspireServiceDefaults/
+                    """,
+                    """
+                    package \
+                        add \
+                            Aspire.Hosting.Maui \
+                        --project \
+                            ./samples/apps/AppAspire.AppHost/ \
+                    """,
+                    
+                    """
+                    package \
+                        add \
+                            BenchmarkDotNet \
+                        --project \
+                            tests/benchmark-tests/business-domain-logic-models/RunnerTests.BenchmarkDotNet/ \
+                    """,
+                    """
+                    package \
+                        add \
+                            BenchmarkDotNet \
+                        --project \
+                            tests/benchmark-tests/ui-user-interface/RunnerTests.BenchmarkDotNet/ \
+                    """,
+                    """
+                    package \
+                        add \
+                            TUnit \
+                            --prerelease \
+                        --project \
+                            tests/unit-tests/business-domain-logic-models/RunnerTests.TUnit/ \
+                    """,
+                ];
+
+foreach (string project_args_item in project_args_list)
+{
+    StartProcessDotnet
+                    (
+                        project_args_item
+                            .Replace(@"\", " ")
+                            .Replace(System.Environment.NewLine, " ")
+                    );
+}
+
+project_args_list =
+                [
+                    """
+                    package \
                         update \
                             Microsoft.AspNetCore.Components.Web \
                     --project 
@@ -1096,6 +1276,28 @@ System.IO.File.WriteAllText
 
 StartProcess("open", "AppSuite.slnx");
 
+/*
+IDistributedApplicationBuilder builder = DistributedApplication.CreateBuilder(args);
+
+IResourceBuilder<ProjectResource> app_blazor;
+IResourceBuilder<ProjectResource> app_blazor_fluentui;
+IResourceBuilder<ProjectResource> app_blazor_fluentui_theme;
+
+app_blazor = builder.AddProject<Projects.App_Web_ASP_net__Blazor>
+								(
+								"app-blazor"
+								);
+app_blazor_fluentui = builder.AddProject<Projects.App_Web_ASP_net__Blazor_FluentUI>
+								(
+								"app-blazor-fluentui"
+								);
+app_blazor_fluentui_theme = builder.AddProject<Projects.App_Web_ASP_net__Blazor_FluentUI_Theme>
+								(
+								"app-blazor-fluentui-theme"
+								);
+
+builder.Build().Run();
+*/
 
 static 
     void
